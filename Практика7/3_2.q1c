@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<querylist>
+	<query name="СписокНоменклатуры">
+		<text>SELECT
+	СпрНоменклатура.Ref AS Услуга,
+	ПродажиTurnovers.КоличествоTurnover AS Количество,
+	ПродажиTurnovers.СуммаTurnover AS Сумма
+FROM
+	AccumulationRegister.Продажи.Turnovers AS ПродажиTurnovers
+		LEFT JOIN Catalog.Номенклатура AS СпрНоменклатура
+		ON (ПродажиTurnovers.Номенклатуроа = СпрНоменклатура.Ref)
+ГДЕ
+	СпрНоменклатура.ВидыНоменклатуры = &amp;ВидыНоменклатуры
+
+ORDER BY
+	Сумма DESC
+</text>
+		<textSQL>
+
+		</textSQL>
+		<planSQL>
+
+		</planSQL>
+		<typeSQL>
+
+		</typeSQL>
+		<parameters>
+			<parameter name="ВидыНоменклатуры" type="EnumRef.ВидыНоменклатуры" value="Материал"/>
+		</parameters>
+	</query>
+</querylist>

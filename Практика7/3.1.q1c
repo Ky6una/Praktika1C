@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<querylist>
+	<query name="СписокНоменклатуры">
+		<text>SELECT
+	СпрНоменклатура.Ref AS Номенклатура,
+	СпрНоменклатура.ВидыНоменклатуры AS ВидыНоменклатуры,
+	ЦеныНоменклатурыSliceLast.Period AS Period,
+	ЦеныНоменклатурыSliceLast.Цена AS Цена
+FROM
+	InformationRegister.ЦеныНоменклатуры.SliceLast AS ЦеныНоменклатурыSliceLast
+		LEFT JOIN Catalog.Номенклатура AS СпрНоменклатура
+		ON (ЦеныНоменклатурыSliceLast.Номенклатура = СпрНоменклатура.Ref)    
+
+ГДЕ
+	НЕ СпрНоменклатура.ЭтоГруппа
+
+	
+</text>
+		<textSQL>
+
+		</textSQL>
+		<planSQL>
+
+		</planSQL>
+		<typeSQL>
+
+		</typeSQL>
+		<parameters>
+			<parameter name="ВидыНоменклатуры" type="EnumRef.ВидыНоменклатуры" value="Материал"/>
+			<parameter name="Ссылка" type="DocumentRef.ОказаниеУслуг" value="1256ceff-2aac-11f1-a988-5cbaefdf948a"/>
+			<parameter name="Date" type="Дата" value="2026-04-12T00:00:00"/>
+			<parameter name="Номенклатура" type="CatalogRef.Номенклатура" value="6921f6bc-2568-11f1-a984-5cbaefdf948a"/>
+		</parameters>
+	</query>
+</querylist>

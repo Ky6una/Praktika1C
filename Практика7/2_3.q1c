@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<querylist>
+	<query name="СписокНоменклатуры">
+		<text>SELECT
+	ПродажиTurnovers.Period AS Period,
+	ПродажиTurnovers.Номенклатуроа AS Номенклатуроа,
+	ПродажиTurnovers.Клиент AS Клиент,
+	ПродажиTurnovers.Договор AS Договор,
+	ПродажиTurnovers.Мастер AS Мастер,
+	ПродажиTurnovers.КоличествоTurnover AS КоличествоTurnover,
+	ПродажиTurnovers.СуммаTurnover AS СуммаTurnover
+	
+FROM
+	AccumulationRegister.Продажи.Turnovers(, , Day, ) AS ПродажиTurnovers
+
+ORDER BY
+	Period
+</text>
+		<textSQL>
+
+		</textSQL>
+		<planSQL>
+
+		</planSQL>
+		<typeSQL>
+
+		</typeSQL>
+		<parameters>
+			<parameter name="ВидыНоменклатуры" type="EnumRef.ВидыНоменклатуры" value="Материал"/>
+			<parameter name="Ссылка" type="DocumentRef.ОказаниеУслуг" value="1256ceff-2aac-11f1-a988-5cbaefdf948a"/>
+		</parameters>
+	</query>
+</querylist>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<querylist>
+	<query name="">
+		<text>SELECT
+	ОказаниеУслуг.Ref AS Ref,
+	ОказаниеУслуг.Клиент AS Клиент,
+	ОказаниеУслуг.ИтоговаяСумма AS ИтоговаяСумма,
+	ОказаниеУслуг.СписокНоменклатуры.( 
+	Ref AS Ref,
+	LineNumber AS LineNumber,
+	Номенклатура AS Номенклатура,
+	Количество AS Количество,
+	Цена AS Цена,
+	Сумма AS Сумма
+	) AS СписокНоменклатуры
+FROM
+	Document.ОказаниеУслуг AS ОказаниеУслуг
+		
+ORDER BY
+	Клиент
+</text>
+		<textSQL>
+
+		</textSQL>
+		<planSQL>
+
+		</planSQL>
+		<typeSQL>
+
+		</typeSQL>
+		<parameters>
+			<parameter name="ВидыНоменклатуры" type="EnumRef.ВидыНоменклатуры" value="Материал"/>
+		</parameters>
+	</query>
+</querylist>

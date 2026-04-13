@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<querylist>
+	<query name="СписокНоменклатуры">
+		<text>SELECT
+	ОстаткиМатериаловBalanceAndTurnovers.Склад AS Склад,
+	ОстаткиМатериаловBalanceAndTurnovers.Материал AS Материал,
+	ОстаткиМатериаловBalanceAndTurnovers.КоличествоOpeningBalance AS КоличествоOpeningBalance,
+	ОстаткиМатериаловBalanceAndTurnovers.КоличествоClosingBalance AS КоличествоClosingBalance,
+	ОстаткиМатериаловBalanceAndTurnovers.КоличествоTurnover AS КоличествоTurnover,
+	ОстаткиМатериаловBalanceAndTurnovers.КоличествоReceipt AS КоличествоReceipt,
+	ОстаткиМатериаловBalanceAndTurnovers.КоличествоExpense AS КоличествоExpense
+FROM
+	AccumulationRegister.ОстаткиМатериалов.BalanceAndTurnovers AS ОстаткиМатериаловBalanceAndTurnovers
+</text>
+		<textSQL>
+
+		</textSQL>
+		<planSQL>
+
+		</planSQL>
+		<typeSQL>
+
+		</typeSQL>
+		<parameters>
+			<parameter name="ВидыНоменклатуры" type="EnumRef.ВидыНоменклатуры" value="Материал"/>
+			<parameter name="Ссылка" type="DocumentRef.ОказаниеУслуг" value="1256ceff-2aac-11f1-a988-5cbaefdf948a"/>
+		</parameters>
+	</query>
+</querylist>
